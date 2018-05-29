@@ -28,10 +28,7 @@ function cloneSO(obj) {
 
   // Handle Array
   else if (obj instanceof Array) {
-    var copy = [];
-    for (var i = 0, len = obj.length; i < len; i++) {
-      copy[i] = cloneSO(obj[i]);
-    }
+    var copy = [...obj];
     return copy;
   }
 
