@@ -1,5 +1,6 @@
 'use strict'
 
+//what is the difference between not defined and undefined?
 //not defined variable: throws a ReferenceError because the variable is not defined
 //console.log(x);
 

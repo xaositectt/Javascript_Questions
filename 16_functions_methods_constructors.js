@@ -1,5 +1,6 @@
 'use strict'
 
+//what's the difference between a function and a method?
 //function call
 function helloWorld(name) {
   return "hello world, " + name;
@@ -32,4 +33,4 @@ function Employee(name, age) {
   }
   
   var emp1 = new Employee('John Doe', 28);
-  console.log(emp1.name, emp1.age); 
+  console.log(emp1.name, emp1.age);

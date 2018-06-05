@@ -14,7 +14,7 @@ JSON.parse(JSON.stringify(a));
 
 function cloneSO(obj) {
   // Handle the 3 simple types, and null or undefined
-  if (null == obj || "object" != typeof obj) {
+  if (null == obj || 'object' != typeof obj) {
     return obj;
   }
 
@@ -24,7 +24,6 @@ function cloneSO(obj) {
     copy.setTime(obj.getTime());
     return copy;
   }
-
 
   // Handle Array
   else if (obj instanceof Array) {
@@ -37,11 +36,14 @@ function cloneSO(obj) {
     var copy = {};
     for (var attr in obj) {
       if (obj.hasOwnProperty(attr)) {
-        copy[attr] = cloneSO(obj[attr]);
+        copy[attr] = clone(obj[attr]);
       }
     }
     return copy;
-  } else {
+  } 
+  
+  //anything else
+  else {
     throw new Error("Unable to copy obj! Its type isn't supported.");
   }
 }

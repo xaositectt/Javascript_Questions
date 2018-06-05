@@ -7,7 +7,6 @@ variable = 'this cannot happen with use strict'
 console.log(variable);
 
 //Without strict mode, a reference to a this value of null or undefined is automatically coerced to the global
-
 //with use strict this throws a reference error! duplicate properties are not allowed in strict mode. 
 object = {
   property: 'whatever',

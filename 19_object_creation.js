@@ -10,7 +10,7 @@ var a = Object.create(null);
 //Equivalent to Object.create(null) method, using a null prototype as an argument.
 var b = {};
 
-// call a function and settisng this of the function to a fresh new Object, and binding 
+// call a function and sets the this of the function to a fresh new Object, and binding 
 // the prototype of that new Object to the function's prototype. 
 var Obj = function(name) {
   this.name = name

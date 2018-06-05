@@ -1,6 +1,6 @@
 'use strict'
 
-//NaN is returned, when the method can't process the information, because it's not a number.
+//NaN is returned, when the method can't process the information, because it's not a number or there is a mathematical impossibility in it.
 console.log('use the force' / 3);
 console.log(parseInt('what'));
 console.log(Math.sqrt(-1));

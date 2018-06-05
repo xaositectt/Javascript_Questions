@@ -12,6 +12,8 @@ function bar() {
 //throws a TypeError: foo is not a function
 // foo();
 
+foo();
+
 var foo = function () {
   console.log('hey');
 };

@@ -24,7 +24,6 @@ function letDeclaration(){
 }
 
 // letDeclaration();
-
 function constDeclaration(){
   //cannot be redeclared like let
   //can't even be reassigned
@@ -43,7 +42,6 @@ function varDeclaration(){
 }
 
 varDeclaration();
-
 
 //throws reference error if you want to log a variable declared with let or const before declaration
 // console.log(myLet);

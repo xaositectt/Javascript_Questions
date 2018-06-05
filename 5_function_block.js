@@ -22,7 +22,14 @@ var myPlugin = (function () {
   function private_function() {}
 
   return {
-    public_function1: function () {},
-    public_function2: function () {}
+    public_function1: function () {
+      console.log('public function 1');
+    },
+    public_function2: function () {
+      console.log('public function 2');
+    }
   }
 })()
+
+myPlugin.public_function1();
+myPlugin.public_function2();
