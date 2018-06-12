@@ -2,7 +2,7 @@
 
 //what is the drawback of a private method of an object? That it is memory inefficient, because every
 //instance of the object will have that method declared inside, while the public method will
-//be only in the prototype.
+//be only declared in the prototype.
 var Employee = function (name, company, salary) {
 
   this.name = name || "";       //Public attribute default value is null

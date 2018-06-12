@@ -22,14 +22,6 @@ console.log(array);
 
 array = ['this', 'is', 'an', 'array'];
 
-//the splice() function returns with a copy of the removed elements, so this actually 
-//returns a copy of the original array
-array.splice(0, array.length);
-
-console.log(array);
-
-array = ['this', 'is', 'an', 'array'];
-
 //slowest method
 while (array.length > 0) {
   array.pop();
