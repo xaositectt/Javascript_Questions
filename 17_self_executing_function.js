@@ -1,6 +1,4 @@
-'use strict'
-
-let x = 'need this for self executing function';
+'use strict';
 
 (function (name) {
   console.log('Hello '+ name);

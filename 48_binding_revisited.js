@@ -42,5 +42,5 @@ let rippedJeans =  {
   }
 }
 
-rippedJeans.func()()
-setTimeout(rippedJeans.func(), 3000)
+rippedJeans.func()();
+setTimeout(rippedJeans.func(), 3000);
