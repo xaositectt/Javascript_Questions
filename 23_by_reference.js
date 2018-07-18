@@ -22,10 +22,15 @@ console.log(identity.firstName); // "Carla"
 
 //cannot be reassigned: throws a syntax error
 // myName = {
-//   nickName = 'Carlito',
+  // nickName = 'Carlito',
 // }
 
-//but changing properties works
-myName.nickname = 'Carlito';
+//but you can empty an object, and the copy will still have the values!
+myName = {
+}
 
-console.log(myName);
+//but changing properties works
+// myName.nickname = 'Carlito';
+
+console.log(myName); //logs empty object
+console.log(identity); //logs the copy of the original myName object
