@@ -14,6 +14,7 @@ function Manager() {
   this.reports = [];
 }
 
+//to get the prototype object of the employee object construction, use function name . prototype 
 Manager.prototype = Object.create(Employee.prototype);
 
 function subManager() {

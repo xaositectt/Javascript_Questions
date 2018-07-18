@@ -13,13 +13,18 @@ let job = {
 
 Object.seal(job);
 
+//you can modify properties of a sealed object
 job.owner = 'George';
+
+//but you can't add new properties- throws an error! 
+// job.remark = 'That\'s like your opiniopn man';
 
 console.log(job);
 
+//you can't add or modify properties of a frozen object
 Object.freeze(job);
 
-//you can modify object properties of objects!
+//but you can modify object properties!
 job.favorites.guns = 'paradise city';
 
 //throws TypeError
@@ -31,3 +36,6 @@ job.favorites.guns = 'paradise city';
 //properties that are objects have modifiable properties
 job.favorites.guns = "knowkin' on heaven's door";
 console.log(job);
+
+//to truly freeze an object, you have to write a recursive function that goes through all properties,
+//checks if they're objects and if yes freezes them too.

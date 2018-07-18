@@ -2,13 +2,13 @@
 
 //typical use: function expressions
 
-let duck = () => {
+let duck = function () {
   console.log('quack')
 };
 duck();
 
 //callback functions
-setTimeout(() => {
+setTimeout(function () {
   console.log('delayed message');
 }, 1000);
 
@@ -16,5 +16,5 @@ let x = 0;
 
 //self executing functions
 (function (name) {
-  console.log('Hello '+ name);
+  console.log('Hello ' + name);
 })('Leila');
