@@ -7,4 +7,4 @@ console.log(Math.sqrt(-1));
 
 //NaN is the only value that is not equal to itself in javascript.
 // NaN is neither greater-than nor less-than any other value.
-console.log(NaN == NaN);
+console.log(NaN == NaN); //logs false

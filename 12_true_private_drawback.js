@@ -7,7 +7,7 @@ var Employee = function (name, company, salary) {
 
   this.name = name || "";       //Public attribute default value is null
   this.company = company || ""; //Public attribute default value is null
-  this.salary = salary || 5000; //Public attribute default value is null
+  this.salary = salary || 5000; //Public attribute default value is 5000
 
   // Private method
   var increaseSalary = function () {

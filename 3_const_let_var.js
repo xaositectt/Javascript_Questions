@@ -17,11 +17,11 @@ console.log('you get an error like: "use strict is not a function" unless there 
 })()
 
 //if you execute this it throws syntax error that a has already been declared
-function letDeclaration(){
+(function letDeclaration(){
   let a =10;
   let a =20; //throws syntax error
   console.log(a); 
-}
+})()
 
 // letDeclaration();
 function constDeclaration(){

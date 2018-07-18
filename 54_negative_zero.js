@@ -21,9 +21,9 @@ console.log(JSON.parse( "-0" ));	// -0
 
 // the operators will yield surprising values
 
-console.log(0 === -0);
-console.log(0 == -0);
-console.log(0 > -0);
+console.log(0 === -0); //true
+console.log(0 == -0); //true
+console.log(0 > -0); //false
 
 // funtcion to tell if a value is negative zero: 
 
