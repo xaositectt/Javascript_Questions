@@ -9,7 +9,6 @@ function getRectArea(width, height) {
   }
 }
 
-
 //wrapping in a try/catch block to catch the error
 try {
   getRectArea(3, 'A');

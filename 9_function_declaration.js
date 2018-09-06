@@ -1,6 +1,7 @@
 'use strict'
 
 // What is the difference between the function declarations below?
+// function expressions cannot be hoisted.
 
 bar();
 

@@ -1,12 +1,10 @@
 'use strict'
 
-let user = {
-  name: 'Paige',
-  getName: () => {
-    return this;
-  }
+function reverseStr(str) {
+  if (str.length == 0 ) {
+    return '';
+  } 
+  return  reverseStr(str.slice(1)) + str[0]
 }
 
-let name = user.getName();
-
-console.log(name);
+console.log(reverseStr('kutya'));

@@ -17,8 +17,7 @@ var obj = {
 
 obj.helloWorld(); // "hello world John Carter"
 
-//we can copy a reference to the same function helloWorld in another object and get a difference answer.
-
+//we can copy a reference to the same function helloWorld in another object and get a different answer.
 var obj2 = {
   name: 'Paige',
   helloWorld: obj.helloWorld,
@@ -26,11 +25,9 @@ var obj2 = {
 
 obj2.helloWorld();
 
-//use function as constructor
-function Employee(name, age) {
-  this.name = name;
-  this.age = age;
-  }
-  
-  var emp1 = new Employee('John Doe', 28);
-  console.log(emp1.name, emp1.age);
+console.log('when called in a setTimeout the method loses its "this" reference')
+setTimeout(obj.helloWorld, 0)
+
+
+console.log('with binding you can solve the "this" problems ')
+setTimeout(obj.helloWorld.bind(obj), 0)

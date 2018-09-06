@@ -1,7 +1,7 @@
 'use strict'
 
-//instanceof operator: checks if the right side is present anywhere in the 
-//prototype chain of the object (left side), and outputs a boolean. 
+//instanceof operator: checks if the right side is present anywhere in the
+//prototype chain of the object (left side), and outputs a boolean.
 function Car(make, model, year) {
   this.make = make;
   this.model = model;

@@ -15,7 +15,7 @@ var Employee = function (name, company, salary) {
   };
 
   // Public method
-  this.dispalyIncreasedSalary = function() {
+  this.displayIncreasedSalary = function() {
       increaseSalary();
       console.log(this.salary);
   };
