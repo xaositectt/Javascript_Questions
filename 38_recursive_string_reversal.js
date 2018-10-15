@@ -1,12 +1,22 @@
 'use strict'
 
 //recursive string reversal
-function reverse(str){
+function reverseFront(str){
   if (str === '') {
     return '';
   } else {
-    return reverse(str.substr(1)) + str.charAt(0);
+    return reverseFront(str.substr(1)) + str.charAt(0);
   }
 }
 
-console.log(reverse('kutya'));
+console.log(reverseFront('Erika'));
+
+function reverseBack(str){
+  if (str === '') {
+    return '';
+  } else {
+    return str.slice(-1) + reverseBack(str.slice(0, -1));
+  }
+}
+
+console.log(reverseBack('Eleniak'));
