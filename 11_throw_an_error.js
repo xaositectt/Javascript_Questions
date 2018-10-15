@@ -6,6 +6,9 @@ function getRectArea(width, height) {
     throw "Parameter is not a number!";
     //you can error existing types of errors too like this:
     // throw TypeError;
+  } else if (width <= 0 || height <= 0) {
+    // another way to throw an error object
+    throw new Error('can\'t have negative dimensions!');
   }
 }
 
@@ -16,4 +19,11 @@ try {
 catch(e) {
   console.log(e);
   // expected output: "Parameter is not a number!"
+}
+
+try {
+  getRectArea(-1, 0)
+}
+catch(e) {
+  console.log(e)
 }
