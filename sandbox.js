@@ -1,10 +1,20 @@
 'use strict'
 
-function reverseStr(str) {
-  if (str.length == 0 ) {
+function reverse(str) {
+  if (str.length == 0) {
     return '';
-  } 
-  return  reverseStr(str.slice(1)) + str[0]
+  }
+  return str.slice(-1) + reverse(str.slice(0, -1))
 }
 
-console.log(reverseStr('kutya'));
+console.log(reverse('Paige'));
+
+function reverseRec(str, acc) {
+  if (str.length > 0) {
+    return reverseRec(str.slice(0, -1), acc + str.slice(-1));
+  } else {
+    return acc;
+  }
+}
+
+console.log(reverseRec('Leila', ''));

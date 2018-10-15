@@ -27,3 +27,7 @@ setTimeout(function() {console.log(boundF())}, 1000);
 
 boundF = user.sayHi.bind(paige);
 setTimeout(function(){console.log(boundF())}, 1000);
+
+// you can also use call
+// that binds the function to the object for the duration of this one execution
+setTimeout(function(){console.log(user.sayHi.call(paige))}, 1000)
