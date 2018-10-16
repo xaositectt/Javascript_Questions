@@ -8,7 +8,7 @@ console.log(variable);
 
 //Without strict mode, a reference to a this value of null or undefined is automatically coerced to the global
 
-//with use strict this throws a reference error! duplicate properties are not allowed in strict mode. 
+//with use strict this throws a reference error! duplicate properties are not allowed in strict mode.
 var object = {
   property: 'whatever',
   property: 'anyway',
@@ -40,3 +40,21 @@ delete object1.property1;
 
 // will throw an error in strict mode because configurable is false!
 console.log(object1.property1);
+
+
+// block scoped functions only work with use strict- without use strict it leaks out
+{
+  function meow(){ console.log('meow'); }
+}
+//works
+meow();
+
+(function(){
+  'use strict'
+
+  {
+    function woof(){ console.log('bark'); }
+  }
+
+  woof(); // throws reference error- woof is not defined
+})()
