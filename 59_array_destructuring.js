@@ -14,13 +14,16 @@ let [firstName, surname] = "Ilya Kantor".split(' ');
 
 console.log(firstName, surname);
 
-// unwanted elements can be ignored with a comma
+// unwanted elements before the variable can be ignored with a comma, afterwards just ignore them
 
 let [, , title] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
 
 console.log(title); // Consul
 
 let [a, b, c] = "abc"; // ["a", "b", "c"]
+
+console.log(a, b, c);
+
 let [one, two, three] = new Set([1, 2, 3]);
 
 console.log(one, two, three);
