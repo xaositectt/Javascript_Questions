@@ -5,8 +5,8 @@
 //both that case and the true case will occur!
 let a = 2;
 switch (a) {
-  case 2:
-    console.log('case 2');
+	case 2:
+		console.log('case 2');
 	case 10:
 		console.log('case 10');
 		break;
@@ -14,14 +14,14 @@ switch (a) {
 		console.log('case 42');
 		break;
 	default:
-    console.log('case when nothing fits');
+		console.log('case when nothing fits');
 }
 
 //default case behaves like else in an if/else statement.
 a = 44;
 switch (a) {
-  case 2:
-    console.log('case 2');
+	case 2:
+		console.log('case 2');
 	case 10:
 		console.log('case 10');
 		break;
@@ -29,5 +29,5 @@ switch (a) {
 		console.log('case 42');
 		break;
 	default:
-    console.log('case when nothing fits');
+		console.log('case when nothing fits');
 }
