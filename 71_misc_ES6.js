@@ -38,3 +38,15 @@ to all of you ${upper( `${who}s` )}!`;
 console.log(text);
 // A very WARM welcome
 // to all of you READERS!
+
+// string raw- shows the raw string with escape symbols etc.
+console.log('hi \n there');
+console.log(String.raw`hi \n there`)
+
+// for ... of loop
+let a = ["a", "b", "c", "d", "e"];
+
+for (var idx in a) {
+  console.log(idx);
+}
+// 0 1 2 3 4
