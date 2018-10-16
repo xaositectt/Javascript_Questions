@@ -12,7 +12,7 @@ console.log(Leila);
 // Shorthand to create objects
 function create(name, age) {
   return {
-    name, 
+    name,
     age
   }
 }
@@ -29,7 +29,3 @@ console.log('name' in Paige, 'occupation' in Paige);
 for (const key in Paige) {
   console.log(Paige[key])
 }
-
-
-
-

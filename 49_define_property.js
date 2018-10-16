@@ -10,6 +10,6 @@ Object.defineProperty( obj, "b", {
 	writable: true,
 	configurable: true,
 	enumerable: true
-} );
+});
 
 console.log(obj.b);
