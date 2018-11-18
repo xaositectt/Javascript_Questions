@@ -17,9 +17,9 @@ class Stack {
       return undefined;
     }
     this.count--;
-    const last = this.items[this.count]
-    delete this.items[this.count]
-    return last
+    const lastItem = this.items[this.count];
+    delete this.items[this.count];
+    return lastItem;
   }
 
   peek() {
