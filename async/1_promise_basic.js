@@ -2,7 +2,7 @@
 // Promises are asynchronous but can be used with simple values to demonstrate:
 
 let testPromise1 = new Promise(function(resolve, reject){
-  let x = 0;
+  let x = 1;
   if (x > 0.5) {
     resolve(x);
   } else {
