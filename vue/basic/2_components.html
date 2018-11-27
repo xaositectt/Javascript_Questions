@@ -1,0 +1,188 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    .tab-button {
+      padding: 6px 10px;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      background: #f0f0f0;
+      margin-bottom: -1px;
+      margin-right: -1px;
+    }
+    .tab-button:hover {
+      background: #e0e0e0;
+    }
+    .tab-button.active {
+      background: #e0e0e0;
+    }
+    .tab {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div id="app">
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+    <alert-box>Error! Leila is not here</alert-box>
+
+    <button v-for="tab in tabs"
+    v-bind:key="tab"
+    v-bind:class="['tab-button', { active: currentTab === tab }]"
+    v-on:click="currentTab = tab">
+    {{ tab }}
+    </button>
+    <component :is="currentTabComponent" class="tab"></component>
+    <br>
+    <br>
+    <local-comp></local-comp>
+
+    <slot-shit>
+      hey there Paige
+      <button>cuck</button>
+    </slot-shit>
+    <slot-crap>
+      <template slot="header">well hello there Elena</template>
+      nice to meet you
+      <template slot="footer">goodbye</template>
+    </slot-crap>
+    <br>
+    <slot-crap></slot-crap>
+    <scoped-slot
+    :todos="[{text: 'Paige', id: 1, hot: true}, {text: 'Leila', id: 2, hot: true}, {text: 'Marina', id: 3, hot: true }, {text: 'Whatever', id: 4, hot: false}]">
+      <div slot-scope="slotProps" v-if="slotProps.todo.hot">
+        {{ slotProps.todo.text }}
+      </div>
+    </scoped-slot>
+  </div>
+
+
+  <script>
+    // global registration: useable in every vue instance
+    Vue.component('button-counter', {
+      data: function () {
+        return {
+        count: 0
+        }
+      },
+      template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+    })
+
+    Vue.component('alert-box', {
+      template: `
+      <div class="demo-alert-box">
+        <strong>Error!</strong>
+        <slot></slot>
+      </div>
+      `
+    })
+
+    Vue.component('tab-home', {
+      template: '<div>Home component</div>'
+    })
+
+    Vue.component('tab-posts', {
+      template: '<div>Posts component</div>'
+    })
+
+    Vue.component('tab-archive', {
+      template: '<div>Archive component</div>'
+    })
+
+    var localComponent = {
+      data() {
+        return {
+          info: 'I am a local component'
+        }
+      },
+      template: '<div>{{ info }}</div>'
+    }
+
+    var slotShit = {
+      data() {
+        return {
+        }
+      },
+      template:
+      `<div>
+        this is a slot
+        <br>
+        <slot></slot>
+        <br>
+        this was a slot
+      </div>`
+    }
+
+    var slotCrap = {
+      data() {
+        return {
+        }
+      },
+      template:
+      `<div>
+        <header>
+          <slot name="header"></slot>
+        </header>
+        <main>
+          <slot>This is the default content</slot>
+        </main>
+        <footer>
+          <slot name="footer"></slot>
+        </footer>
+      <div>`
+    }
+
+    // scoped slot for more advanced vue patterns
+    var scopedSlot = {
+      data() {
+        return {
+        }
+      },
+      props: {
+        todos: Array
+      },
+      template:
+        `<div>
+          <div v-for="todo in todos" :key="todo.id">
+            <slot :todo="todo">
+              {{ todo.text }}
+            </slot>
+          </div>
+        </div>`
+    }
+
+    new Vue({
+      el: '#app',
+      components: {
+        localComp: localComponent,
+        slotShit: slotShit,
+        slotCrap: slotCrap,
+        scopedSlot: scopedSlot
+      },
+      data: {
+        currentTab: 'Home',
+        tabs: ['Home', 'Posts', 'Archive']
+      },
+      computed: {
+        currentTabComponent: function () {
+          return 'tab-' + this.currentTab.toLowerCase()
+        }
+      }
+    })
+
+  </script>
+</body>
+
+</html>

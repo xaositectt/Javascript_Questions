@@ -1,0 +1,171 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    .red {
+      background-color: pink;
+    }
+    .underlined {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div id="app">
+    <div>{{ message }}</div>
+    <div>using html attributes with the : or v-bind</div>
+    <div :title="title">this div has a title, hover over the mouse</div>
+    <div v-bind:title="title">v-bind same as : before html attribute</div>
+    <div v-if="visibility">I can see but you see not</div>
+    <button @click="toggleVisibility">toggle</button>
+    <div
+    v-for="shit in shits"
+    :key="shit.id">
+    {{ shit.shit }}
+  </div>
+    <div>for two way binding: v-model, with a boolean</div>
+    <div>{{ boundString }}</div>
+    <input v-model="boundString" type="text">
+
+    <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+
+    <p>using methods and computed</p>
+    <p>this is computed: {{ reversedMessage }}</p>
+    <p>this is a method: {{ reverseMessage() }}</p>
+    <p>in most cases it's the same thing.
+      <br>but they're cached differently: computed properties are cached based on their dependencies.
+      <br>they will be reevaluated any time a dependency changes.
+      <br>methods will always run whenever a rerender happens.
+      <br>so computed is good when you watch something for changes.
+    </p>
+    <p>watch properties also watch something that changes</p>
+    <p>watch: {{ fullNameWatch }}</p>
+    <p>computed:  {{ fullName }}</p>
+    <p>bound classes</p>
+    <span :class="{red: isRed, underlined: isRed}">switch my background</span>
+    <button @click="toggleRed">toggle red background</button>
+    <p>also works with an object in data() </p>
+    <span :class="classObject">bound class data with data</span>
+    <p>also works with with computed properties</p>
+    <span :class="classObjectComputed">bound class data with computed</span>
+    <p>we can also give classes as an array</p>
+    <span :class="[isActive ? activeClass : '', errorClass]">bound class data with an array</span>
+
+    <div :style="{ color: activeColor, fontSize: fontSize + 'px' }">inline object style</div>
+
+    <p>looping through objects</p>
+    <ul id="v-for-object">
+      <li v-for="value in object">
+        {{ value }}
+      </li>
+    </ul>
+
+    <p>adding properties to an object is not reactive, also some methods of modifying an array</p>
+    <p>but we can use vue's add to object Vue.set(object, key, value)</p>
+    <div v-for="(value, key) in object">
+      {{ key }}: {{ value }}
+    </div>
+
+    <p>list with a range of numbers</p>
+    <div>
+      <span v-for="n in 10">{{ n }} </span>
+    </div>
+
+    <p>v-if will run on every iteration of the list</p>
+    <li v-for="n in 15" v-if="n > 10">
+      {{ n }}
+    </li>
+
+    <div>event handling:</div>
+
+    <button v-on:click="greet">Greet</button>
+
+  </div>
+
+
+  <script>
+    var app2 = new Vue({
+      el: '#app',
+      data: {
+        message: 'You loaded this page on ' + new Date().toLocaleString(),
+        title: 'very nice title yes',
+        visibility: true,
+        shits: [{shit: 'shit', id: 0}, {shit: 'crap', id: 1}, {shit: 'doodoo', id: 2}],
+        boundString: 'hello thee',
+        rawHtml: '<b>hello there<b>',
+        firstName: 'Yolo',
+        lastName: 'Swaggins',
+        fullNameWatch: 'Yolo Swaggin',
+        isRed: true,
+        classObject: {
+          red: true,
+          underlined: false
+        },
+        isActive: true,
+        error: 'fatal',
+        activeClass: 'red',
+        errorClass: 'underlined',
+        activeColor: 'red',
+        fontSize: 30,
+        object: {
+          firstName: 'John',
+          lastName: 'Doe',
+          age: 30
+        },
+        name: 'Vue.js'
+      },
+      watch: {
+        firstName: function (val) {
+          this.fullName = val + ' ' + this.lastName
+        },
+        lastName: function (val) {
+          this.fullName = this.firstName + ' ' + val
+        }
+      },
+      methods: {
+        reverseMessage() {
+          return this.message.split('').reverse().join('')
+        },
+        toggleVisibility() {
+          this.visibility = !this.visibility
+        },
+        toggleRed() {
+          this.isRed = !this.isRed
+        },
+        greet: function (event) {
+          // `this` inside methods points to the Vue instance
+          alert('Hello ' + this.name + '!')
+          // `event` is the native DOM event
+          if (event) {
+            alert(event.target.tagName)
+          }
+        }
+      },
+      computed: {
+        reversedMessage: function() {
+          return this.message.split('').reverse().join('')
+        },
+        fullName: function() {
+          return this.firstName + this.lastName
+        },
+        classObjectComputed: function () {
+          return {
+            red: this.isActive && !this.error,
+            'underlined': this.error && this.error === 'fatal'
+          }
+        }
+      },
+      created() {
+        Vue.set(this.object, 'height', 180)
+        this.$set(this.object, 'height', 150)
+      }
+     })
+  </script>
+</body>
+</html>
