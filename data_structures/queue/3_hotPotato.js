@@ -16,7 +16,7 @@ function hotPotato(elementslist, num) {
       let firstElem = queue.dequeue();
       queue.enqueue(firstElem);
     }
-    eliminatedList.push(queue.dequeue())
+    eliminatedList.push(queue.dequeue());
   }
 
   return {
