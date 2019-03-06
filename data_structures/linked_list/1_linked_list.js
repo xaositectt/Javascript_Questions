@@ -1,7 +1,7 @@
 const equals = require('./utils').defaultEquals;
 const Node = require('./utils').Node;
 
-export default class LinkedList {
+class LinkedList {
   constructor(equalsFn = equals) {
     this.count = 0;
     this.head = undefined;
@@ -118,4 +118,8 @@ export default class LinkedList {
   reverse() {
 
   }
+}
+
+module.exports = {
+  LinkedList
 }
