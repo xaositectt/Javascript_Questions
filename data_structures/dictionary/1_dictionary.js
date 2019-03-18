@@ -59,7 +59,7 @@ class Dictionary {
   }
 
   size() {
-    this.keyValues().length;
+    return this.keyValues().length;
   }
 
   isEmpty() {
