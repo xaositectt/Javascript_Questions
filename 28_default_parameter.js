@@ -1,9 +1,9 @@
 'use strict'
 
 function print(name = 'Paige') {
-  console.log(name);
+  console.log(name)
 }
 
-print();
+print()
 
-print('Leila');
+print('Leila')

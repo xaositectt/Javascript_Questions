@@ -5,13 +5,13 @@
 //to see it, we can execute a function outside of the scope where it was defined
 
 function closureTry() {
-  let info = 'FYI this is some information';
+  let info = 'FYI this is some information'
 
   function myReturnFunction() {
-    return info;
+    return info
   }
 
-  return myReturnFunction;
+  return myReturnFunction
 }
 
 console.log(closureTry()) //this will be the function body, because the return function is not executed

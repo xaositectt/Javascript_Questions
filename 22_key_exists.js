@@ -2,7 +2,7 @@
 
 // test the particular object instance for a property:
 
-let obj = {};
+let obj = {}
 
 obj.hasOwnProperty("key")
 

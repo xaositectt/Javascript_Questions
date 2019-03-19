@@ -1,6 +1,6 @@
 'use strict'
 
-let arr = [1, 2, 3, 4];
+let arr = [1, 2, 3, 4]
 
 let obj = {
   0: 'Paige',
@@ -9,4 +9,4 @@ let obj = {
   length: 2
 }
 
-console.log(arr.concat(obj));
+console.log(arr.concat(obj))

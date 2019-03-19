@@ -14,9 +14,9 @@ let thisIsCrazy = {
   func: heyIJustMetYou(),
 }
 
-thisIsCrazy.func();
+thisIsCrazy.func()
 
-setTimeout(thisIsCrazy.func, 0);
+setTimeout(thisIsCrazy.func, 0)
 
 
 
@@ -27,21 +27,21 @@ function callMeMaybe() {
   return () => { console.log('arrow function: ', this.a)}
 }
 
-let wereYouThinkWereGoingBaby = { a:1, func: callMeMaybe() };
+let wereYouThinkWereGoingBaby = { a:1, func: callMeMaybe() }
 
-wereYouThinkWereGoingBaby.func();
+wereYouThinkWereGoingBaby.func()
 
-setTimeout(wereYouThinkWereGoingBaby.func, 2000);
+setTimeout(wereYouThinkWereGoingBaby.func, 2000)
 
 //this is equal to this, where you pass this with a lexical scoping rule
 //thus escaping using binding or the rules of this
 let rippedJeans =  {
   a: 'skin was showin',
   func: function yourStareWasHolding() {
-    let self = this;
+    let self = this
     return function(){ console.log('escaping this rules with this assignment: ', self.a) }
   }
 }
 
-rippedJeans.func()();
-setTimeout(rippedJeans.func(), 3000);
+rippedJeans.func()()
+setTimeout(rippedJeans.func(), 3000)

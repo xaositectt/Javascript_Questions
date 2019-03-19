@@ -14,9 +14,9 @@ let b = {
 //with spread operator
 let c = {...a, ...b}
 
-console.log(c);
+console.log(c)
 
 //with assign function
-let d = Object.assign(a, b);
+let d = Object.assign(a, b)
 
-console.log(d);
+console.log(d)
