@@ -15,7 +15,7 @@ class HashTable {
     }
     const tableKey = this.toStrFn(key)
     let hash = 0
-    for (let i = 0 i < tableKey.length i++) {
+    for (let i = 0; i < tableKey.length; i++) {
       hash += tableKey.charCodeAt(i)
     }
     // lower the number by dividing with an arbitrary number
@@ -76,11 +76,15 @@ class HashTable {
     }
     const keys = Object.keys(this.table)
     let objString = `{${keys[0]} => ${this.table[keys[0]].toString()}}`
-    for (let i = 1 i < keys.length i++) {
+    for (let i = 1; i < keys.length; i++) {
       objString = `${objString},{${keys[i]} => ${this.table[keys[i]].toString()}}`
     }
     return objString
   }
+}
+
+module.exports = {
+  HashTable
 }
 
 const hash = new HashTable()
