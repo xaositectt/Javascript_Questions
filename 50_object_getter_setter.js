@@ -13,5 +13,4 @@ var myObject = {
 }
 
 myObject.a = 2
-
 console.log(myObject.a) // 4

@@ -1,32 +1,29 @@
 //default behavior where this defaults to the global object is not available in strict mode so strict mode is not used here
-// 'use strict'
+'use strict'
 
 //normal functions lose the implicitly added this if they're assigned as an object's method if you call them in a different context
 //like a setTimeout or assigned to a new variable
 function heyIJustMetYou(){
-  return function() {
-    console.log('regular function: ', this.a)
-  }
+  console.log('regular function: ', this.a)
 }
 
 let thisIsCrazy = {
   a: 'here\'s my number',
-  func: heyIJustMetYou(),
+  func: heyIJustMetYou,
 }
 
 thisIsCrazy.func()
 
 setTimeout(thisIsCrazy.func, 0)
 
-
-
 //  but arrow functions inherit the this from the parent
 //  so they don't lose the this if you call them from a different context
 // these don't work!!!
 function callMeMaybe() {
-  return () => { console.log('arrow function: ', this.a)}
+  return () => { console.log('arrow function: ', this)}
 }
 
+// returns the module.exports object that it captures from a scope up
 let wereYouThinkWereGoingBaby = { a:1, func: callMeMaybe() }
 
 wereYouThinkWereGoingBaby.func()

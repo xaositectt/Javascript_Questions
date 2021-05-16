@@ -4,9 +4,9 @@
 
 let obj = {}
 
-obj.hasOwnProperty("key")
+obj.hasOwnProperty('key')
 
 // note the three equal signs so that null won't be equal to undefined
-if( aa["goodbye"] === undefined ) {
+if( aa['goodbye'] === undefined ) {
     // do something
 }

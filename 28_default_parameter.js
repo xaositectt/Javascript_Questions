@@ -5,5 +5,4 @@ function print(name = 'Paige') {
 }
 
 print()
-
 print('Leila')

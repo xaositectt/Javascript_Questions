@@ -18,12 +18,13 @@ var object = {
 //considered as variables in the containing scope.
 eval('var x = 10')
 
-console.log(x)
+console.log(x);
 
-//this would not work in strict mode. functions declared in eval() do not work outside of eval.
+//  this would not work in strict mode. functions declared in eval() do not work outside of eval.
+// ; is needed before imediately executed functions
+
 (function(){
   eval("function myFunction(){console.log('hello')}")
-
   myFunction()
 })()
 
@@ -36,10 +37,23 @@ Object.defineProperty(object1, 'property1', {
   configurable: false,
 })
 
-delete object1.property1
+delete object1.property1;
 
 // will throw an error in strict mode because configurable is false!
-console.log(object1.property1)
+// console.log(object1.property1)
+// use strict is block scoped!!
+(function() {
+  'use strict'
+  const object2 = {}
+  // doesn't work here apparently...
+  Object.defineProperty(object2, 'property1', {
+    value: 42,
+    configurable: false
+  })
+  console.log(object2.property1)
+  delete object2.property1
+  console.log(object2.property1)
+})()
 
 
 // block scoped functions only work with use strict- without use strict it leaks out
@@ -47,11 +61,12 @@ console.log(object1.property1)
   function meow(){ console.log('meow') }
 }
 //works
-meow()
+meow();
 
 (function(){
   'use strict'
 
+  meow()
   {
     function woof(){ console.log('bark') }
   }

@@ -8,7 +8,6 @@ function helloWorld(name) {
 
 //method call
 var obj = {
-
   name: 'John Carter',
   helloWorld: function () {
     console.log(`hello world, ${this.name}`)
@@ -24,7 +23,6 @@ var obj2 = {
 }
 
 obj2.helloWorld()
-
 
 //undefined because no name property here
 var obj3 = {
@@ -42,7 +40,6 @@ obj4.helloWorld()
 
 console.log('when called in a setTimeout the method loses its "this" reference')
 setTimeout(obj.helloWorld, 0)
-
 
 console.log('with binding you can solve the "this" problems ')
 setTimeout(obj.helloWorld.bind(obj), 0)

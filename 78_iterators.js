@@ -7,7 +7,7 @@ let daysOfWeek = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday
 // The Array class also has a property named @ @iterator
 let iterator = daysOfWeek[Symbol.iterator]();
 
-console.log(iterator); // Object [Array Iterator] {}
+console.log('iterator', iterator); // Object [Array Iterator] {}
 console.log(iterator.next()); // { value: 'Sunday', done: false }
 console.log(iterator.next().value); // Monday
 console.log(iterator.next().value); // Tuesday
@@ -19,9 +19,8 @@ console.log(iterator.next()); // { value: undefined, done: true }
 
 let iterator2 = daysOfWeek[Symbol.iterator]();
 
-
 for (const n of iterator2) {
-  console.log(n); // logs all days
+  console.log('day:', n); // logs all days
 }
 
 // entries method: returns @@iterator, which contains key/value pairs

@@ -39,7 +39,7 @@ console.log(arr3) // now ["Let's", "dance", "right", "now"]
 
 // splice returns the array of removed elements:
 
-let arr4 = ["I", "study", "JavaScript", "right", "now"]
+let arr4 = ["I", "study", "JavaScript", "right", "meow"]
 
 // remove 2 first
 console.log('returning the spliced elements...')

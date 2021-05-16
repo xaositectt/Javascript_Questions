@@ -22,7 +22,6 @@ if (!'') {
   console.log('it\'s falsy');
 }
 
-
 //these will be all true because they're not on the falsy list!
 var a = new Boolean( false );
 var b = new Number( 0 );

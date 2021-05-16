@@ -50,16 +50,29 @@ for (let i = 0; i < 5; i++) {
   })
 }
 
-funcs[0]();
+funcs.forEach(e => e())
 
+console.log('again with let')
 funcs = [];
 
 // works now because the added block scoped i declaration takes care of the problem of k being global
 for (var k = 0; k < 5; k++) {
-  let i = k;
+  let i = k
   funcs.push(function () {
     console.log(i);
   })
 }
+funcs.forEach(e => e())
 
-funcs[0]();
+console.log('again')
+funcs = [];
+
+for (var k = 0; k < 5; k++) {
+  (function(i) {
+    funcs.push(function () {
+      console.log(i);
+    })
+  })(k)
+}
+
+funcs.forEach(e => e())

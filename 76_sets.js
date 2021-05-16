@@ -12,7 +12,7 @@ console.log(set1.has(5));
 console.log(set1.has(6));
 // expected output: false
 
-// NaN and undefined can also be stored in a Set.NaN is considered the same as NaN
+// NaN and undefined can also be stored in a Set. NaN is considered the same as NaN
 set1.add(NaN);
 set1.add(undefined);
 set1.add(NaN);
@@ -24,18 +24,16 @@ console.log(set1)
 set1.forEach((elem, elemagain) => console.log(`the ${elemagain}th elem is`, elem));
 
 // to return a new iterator with the values in insertion order
-console.log(set1.values());
+console.log('set1.values', set1.values());
 
 // to log the length
-console.log(set1.size);
+console.log('set1.size', set1.size);
 
 // convert to array
-
 let arr = [...set1];
 console.log(arr); // converted to array
 
 arr = Array.from(set1);
-
 console.log(arr); // same thing
 
 
@@ -54,12 +52,11 @@ for (const item of set1.values()) {
 const set2 = new Set([0, 1, 2]);
 // intersection of two sets
 const intersection = new Set([...set1].filter(elem => set2.has(elem)));
-console.log(intersection);
+console.log('intersection', intersection);
 
 // difference of two sets
 const diff = new Set([...set1].filter(elem => !set2.has(elem)));
-console.log(diff);
-
+console.log('diff', diff);
 
 // WeakSet is a special kind of Set that does not prevent JavaScript from removing its items from memory.
 // WeakSets are collections of objects only and not of arbitrary values of any type.

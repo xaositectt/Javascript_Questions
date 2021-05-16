@@ -8,7 +8,9 @@ function getRectArea(width, height) {
     // throw TypeError;
   } else if (width <= 0 || height <= 0) {
     // another way to throw an error object
-    throw new Error('can\'t have negative dimensions!')
+    // throw new Error('can\'t have negative dimensions!')
+    // same thing
+    throw 'can\'t have negative dimensions!'
   }
 }
 

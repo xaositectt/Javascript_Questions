@@ -1,10 +1,9 @@
 'use strict'
 
-// An optional second argument can be passed to JSON.stringify(..) 
-// that is called replacer. This argument can either be an array or a function. 
-// It's used to customize the recursive serialization of an object by providing 
+// An optional second argument can be passed to JSON.stringify(..)
+// that is called replacer. This argument can either be an array or a function.
+// It's used to customize the recursive serialization of an object by providing
 // a filtering mechanism for which properties should and should not be included
-
 var a = {
 	b: 42,
 	c: "42",

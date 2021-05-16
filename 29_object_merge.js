@@ -11,6 +11,7 @@ let b = {
   wealth: 'vast'
 }
 
+// the second name overwrites the first one!
 //with spread operator
 let c = {...a, ...b}
 

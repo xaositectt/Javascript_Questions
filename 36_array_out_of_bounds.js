@@ -1,7 +1,6 @@
 'use strict'
 
 //what happens when you reference an out of bounds element?
-
 let a = [1, 2, ,3]
 
 console.log(a[5]) //returns undefined

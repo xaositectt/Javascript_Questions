@@ -8,9 +8,9 @@ let options = {
 
 //order doesn't matter
 let {
-  title, 
+  title,
   height,
-  width, 
+  width,
 } = options
 
 console.log(title)  // Menu
@@ -38,9 +38,12 @@ let {name = 'Leila', friend = 'Paige'} = options3
 console.log(name, friend)
 
 //default values can be functions
-let {girlName = function(){ console.log('Paige is her name') }, age = 24} = { age: 23 }
-console.log(age)
+let { girlName = function(){ console.log('Paige is her name') }, age = 24} = { age: 23 }
+console.log('age is', age)
 girlName()
+let { girlNm = function(){ console.log('Leila her name') }, ag = 24} = { ag: 24, girlNm: 'Leila' }
+console.log('ag is', ag)
+console.log('girlNm is', girlNm)
 
 // combine both the colon and equality:
 let options4 = {
@@ -71,5 +74,5 @@ console.log(rest.width)   // 100
 
 // it works like this
 let title6, width6, height6
-({title6, width6, height6} = {title: "Menu", width: 200, height: 100})
+({title6, width6, height6} = {title6: "Menu", width: 200, height: 100})
 console.log(title6 ) // Menu

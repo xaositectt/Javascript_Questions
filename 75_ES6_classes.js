@@ -1,7 +1,5 @@
 // always use the function shorthand - super only works in these
 // class identifies a block where the contents define the prototype of a function
-
-
 class Foo {
   constructor(a, b) {
     this.x = a;
@@ -30,8 +28,8 @@ const what = new Bar(1, 2, 3);
 console.log(what.gimmeXY());
 console.log(what.gimmeXYZ());
 
-console.log(what instanceof Bar)
-console.log(what instanceof Foo)
+console.log('what instanceof Bar', what instanceof Bar)
+console.log('what instanceof Foo', what instanceof Foo)
 
 // we can extend built in classes
 class MyCoolArray extends Array {
@@ -39,13 +37,13 @@ class MyCoolArray extends Array {
 	last() { return this[this.length - 1]; }
 }
 
-var a = new MyCoolArray( 1, 2, 3 );
+var a = new MyCoolArray(1, 2, 3);
 
-a.length;					// 3
-a;							// [1,2,3]
+console.log(a.length);					// 3
+console.log(a);							// [1,2,3]
 
-a.first();					// 1
-a.last()
+console.log('first', a.first());					// 1
+console.log('last', a.last())
 
 // extended error objects like this capture stack information about the file and line number
 // not like plain old Error objects that just display a note
@@ -58,16 +56,18 @@ class Oops extends Error {
 
 // later:
 var ouch = new Oops( "I messed up!" );
-throw ouch;
+// throw ouch;
 
 // the new.target points to the constructor that "new" invoked
-class Foo {
+class Foooo {
   constructor() {
     console.log("Foo: ", new.target.name);
   }
 }
 
-class Bar extends Foo {
+const ech = new Foooo()
+
+class Barz extends Foooo {
   constructor() {
     super();
     console.log("Bar: ", new.target.name);
@@ -77,10 +77,10 @@ class Bar extends Foo {
   }
 }
 
-var a = new Foo();
+var a = new Foooo();
 // Foo: Foo
 
-var b = new Bar();
+var b = new Barz();
 // Foo: Bar   <-- respects the `new` call-site
 // Bar: Bar
 
@@ -89,12 +89,12 @@ b.baz();
 
 // you can use static functions just like in Java
 // these are added directly to that class's function object, not to the function object's prototype object
-class Foo {
+class Fooo {
 	static cool() { console.log( "cool" ); }
 	wow() { console.log( "wow" ); }
 }
 
-class Bar extends Foo {
+class Barr extends Fooo {
 	static awesome() {
 		super.cool();
 		console.log( "awesome" );
@@ -105,12 +105,12 @@ class Bar extends Foo {
 	}
 }
 
-Foo.cool();					// "cool"
-Bar.cool();					// "cool"
-Bar.awesome();				// "cool"
+Fooo.cool();					// "cool"
+Barr.cool();					// "cool"
+Barr.awesome();				// "cool"
 							// "awesome"
 
-var b = new Bar();
+var b = new Barr();
 b.neat();					// "wow"
 							// "neat"
 

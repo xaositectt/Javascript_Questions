@@ -1,4 +1,4 @@
-var x = 2, y = 3,
+var x = 2, y = 3
 
 // o = {
 //   x: x,
@@ -6,7 +6,7 @@ var x = 2, y = 3,
 // };
 
 // object literal shorthand
-o = {
+let o = {
   x,
   y
 };

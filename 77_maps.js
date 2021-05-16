@@ -46,7 +46,6 @@ console.log(myMap);
 
 
 // weak map- Keys of WeakMaps are of the type Object only. Primitive data types as keys are not allowed
-
 const wm1 = new WeakMap(), wm2 = new WeakMap(), wm3 = new WeakMap();
 var o1 = {}, o2 = function () {}, o3 = window;
 

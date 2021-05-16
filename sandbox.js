@@ -1,20 +1,31 @@
 'use strict'
-
-function reverse(str) {
-  if (str.length == 0) {
-    return '';
-  }
-  return str.slice(-1) + reverse(str.slice(0, -1))
+//  top level
+//  equivalent to module.exports
+console.log(this === module.exports)
+function thiss() {
+  // global object
+  // not available in strict mode!
+  console.log(this === globalThis)
+  console.log(this)
 }
 
-console.log(reverse('Paige'));
+const logIt = () => console.log('arrowthis is', this)
+function arrowThis() {
+  console.log('outside of arrowthis', this)
+  logIt()
+}
+arrowThis()
 
-function reverseRec(str, acc) {
-  if (str.length > 0) {
-    return reverseRec(str.slice(0, -1), acc + str.slice(-1));
-  } else {
-    return acc;
-  }
+function thisss() {
+  'use strict'
+  // in strict mode function needs to get the this from an object
+  console.log(this)
 }
 
-console.log(reverseRec('Leila', ''));
+let obj = {
+  thisss: thisss
+}
+
+thiss()
+thisss()
+obj.thisss()

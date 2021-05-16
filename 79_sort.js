@@ -1,9 +1,9 @@
 // sort method
 let numbers = [2, 5, 3, 6, 1];
-console.log(numbers.sort());
+console.log('sorted numbers', numbers.sort());
 
 // custom sorting function- if a > b, it's positive, if a < b, it's negative
-console.log(numbers.sort((a, b) => a - b));
+console.log('sorted numbers', numbers.sort((a, b) => a - b));
 
 // same as
 console.log(numbers.sort((a, b) => {
@@ -31,7 +31,7 @@ function comparePerson(a, b) {
   }
   return 0;
 }
-console.log(friends.sort(comparePerson)); //sorts by age
+console.log('sorted friends', friends.sort(comparePerson)); //sorts by age
 
 let names = ['Ana', 'ana', 'john', 'John'];
 console.log(names.sort()); // the capitals are before the lowercase names

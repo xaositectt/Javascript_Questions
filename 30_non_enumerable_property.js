@@ -1,5 +1,4 @@
 'use strict'
-
 var person = { age: 18 }
 Object.defineProperty(person, 'name', { value: 'Joshua', enumerable: false })
 

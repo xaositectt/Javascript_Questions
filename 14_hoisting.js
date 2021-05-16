@@ -13,7 +13,7 @@ console.log(declaredLater)
 
 var name = "Baggins"
 
-//you would expect that it displays 'Original name was Baggins', but because the variable with the same name was 
+//you would expect that it displays 'Original name was Baggins', but because the variable with the same name was
 //declared in the function block too, it was hoisted there too, so because of the hoisting it displays undefined.
 (function () {
     // Outputs: "Original name was undefined"
@@ -30,5 +30,5 @@ var name = "Baggins"
 isItHoisted()
 
 function isItHoisted() {
-    console.log("Yes!")
+  console.log("Yes!")
 }

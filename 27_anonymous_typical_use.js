@@ -1,7 +1,6 @@
 'use strict'
 
 //typical use: function expressions
-
 let duck = function () {
   console.log('quack')
 }

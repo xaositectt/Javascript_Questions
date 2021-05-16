@@ -12,5 +12,5 @@ console.log(result)
 console.log(typeof result)
 
 // you can convert it to an array like this:
-console.log(Array.prototype.slice.call( result ))
-console.log(Array.from ( result ))
+console.log(Array.prototype.slice.call(result))
+console.log(Array.from(result))

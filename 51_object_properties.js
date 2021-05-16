@@ -19,7 +19,7 @@ function create(name, age) {
 
 let Paige = create('Paige', 25)
 
-console.log(Paige.name, Paige.age)
+console.log(Paige)
 
 // you can use the in statement to check if an object has a property
 

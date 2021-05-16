@@ -8,7 +8,7 @@ let a = (42, 44);
 console.log(a); //logs 44
 
 var b = 42, b;
-c = b++, b;
+var c = b++, b;
 
-b;	// 43
-c;	// 42
+console.log(b);	// 43
+console.log(c);	// 42

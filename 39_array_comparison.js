@@ -10,3 +10,4 @@ let c = '1,2,3'
 console.log(a == c) //logs true
 console.log(b == c) //logs true
 console.log(a === c) //logs false
+console.log(a === b) //logs false

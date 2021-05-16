@@ -2,7 +2,6 @@
 
 // super can be used only inside object functions with the shorthand syntax!!
 // you use the
-
 let o0 = {
   fooo() {
     console.log('hi Erika');

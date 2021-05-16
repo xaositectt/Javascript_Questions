@@ -15,7 +15,6 @@ let [firstName, surname] = "Ilya Kantor".split(' ')
 console.log(firstName, surname)
 
 // unwanted elements before the variable can be ignored with a comma, afterwards just ignore them
-
 let [, , title] = ["Julius", "Caesar", "Consul", "of the Roman Republic"]
 
 console.log(title) // Consul
@@ -28,18 +27,11 @@ let [one, two, three] = new Set([1, 2, 3])
 
 console.log(one, two, three)
 
-//works with object properties
-let user = {}
-[user.name, user.surname] = "Ilya Kantor".split(' ')
-
-console.log(user.name) // Ilya
-
 //the rest can be collected into an array
 let [name1, name2, ...rest] = ["Julius", "Caesar", "Consul", "of the Roman Republic"]
 console.log(name1, name2, rest)
 
 // absent values are undefined
-
 let [firstname2, surname2] = []
 console.log(firstname2)
 
